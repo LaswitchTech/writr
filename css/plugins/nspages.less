@@ -8,10 +8,21 @@
     a {
       border-radius: 20px;
       border-color: @ini_text_alt;
-      padding: 0px;
+      transition: all 0.5s ease;
+      max-width: none;
+      margin: 0px;
+      padding: 8px;
+      width: 33.33%;
+      background-color: transparent;
+      height: 250px;
 
       .nspagesPicturesModeImg {
+        border-radius: 20px;
+        border-width: 4px !important;
+        border-color: @ini_text_alt;
+        border: 4px solid @ini_text_alt;
         height: 100%;
+        transition: inherit;
 
         .nspagesPicturesModeTitle {
           background-color: @ini_text_alt;
@@ -19,11 +30,20 @@
           padding: 4px 16px;
           border-top-right-radius: 16px;
           border-bottom-right-radius: 16px;
+          transition: inherit;
         }
       }
     }
     a:hover {
-      background-color: @ini_theme_color;
+      background-color: transparent;
+
+      .nspagesPicturesModeImg {
+        border-color: @ini_theme_color;
+
+        .nspagesPicturesModeTitle {
+          background-color: @ini_theme_color;
+        }
+      }
     }
   }
 }
