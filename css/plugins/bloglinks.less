@@ -89,3 +89,21 @@
 .makeFullWidth #plugin_bloglinks__links{
   width: ~"calc(100vw - 400px - @{ini_content_border})";
 }
+
+/* 960px > x */
+@media only screen and (max-width: 959px) {
+
+    #plugin_bloglinks__links > div {
+
+      a.wikilink1 {
+
+        span.title {
+          display: none;
+        }
+      }
+    }
+
+    .makeFullWidth #plugin_bloglinks__links {
+      width: 100vw;
+    }
+}
