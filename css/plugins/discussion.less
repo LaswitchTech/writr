@@ -53,6 +53,13 @@
 	width: ~"calc(100vw - 400px - @{ini_content_border})";
 }
 
+@media only screen and (max-width: 959px) {
+    .dokuwiki div.comment_wrapper::before,
+    .dokuwiki div.comment_wrapper::after {
+        width: 100vw;
+    }
+}
+
 .dokuwiki div.comment_wrapper {
     position: relative;
     margin: 0px -40px;
