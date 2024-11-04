@@ -5,10 +5,27 @@ div.plugin-gallery {
     div.gallery-page {
         figure {
             border-radius: 20px;
+            padding: 0px;
+            border: 6px solid @ini_text_alt;
+            transition: all 0.5s ease;
+            background: @ini_border;
 
-            img {
-                border-radius: 15px;
+            a {
+                width: 166px;
+                height: 166px;
+                transition: inherit;
+
+                img {
+                    border-radius: 15px;
+                    width: 166px;
+                    height: 166px;
+                    object-fit: contain;
+                    transition: inherit;
+                }
             }
+        }
+        figure:hover {
+            border-color: @ini_theme_color;
         }
     }
 }
