@@ -3,126 +3,127 @@
 
 @media screen {
 
-/* highlight selected tool */
-.mode_admin a.action.admin,
-.mode_login a.action.login,
-.mode_register a.action.register,
-.mode_profile a.action.profile,
-.mode_recent a.action.recent,
-.mode_index a.action.index,
-.mode_media a.action.media,
-.mode_revisions a.action.revs,
-.mode_backlink a.action.backlink,
-.mode_subscribe a.action.subscribe {
-    background-color: transparent;
-}
-
-.loggedIn{
-    .site-tools ul li:has(> a.action.media), .user-tools ul li:has(> a.action.admin), .page-tools ul li:has(> a.action.revs) {
-        display: block;
-    }
-}
-
-.page-tools {
-    ul {
-        list-style: none;
-        text-transform: uppercase;
-    }
-    li {
-        padding: 5px 0;
-    }
-    li:first-child {
-        padding-top: 0;
-    }
-    li:last-child {
-        padding-bottom: 0;
-    }
-    ul a {
-        color: @ini_background;
-        font-weight: bold;
-        text-decoration: none;
-    }
-    ul a:hover {
-        color: @ini_theme_color_alt;
-    }
-    a span.icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        -webkit-font-smoothing: antialiased;
-        font-size: 20px;
-        line-height: 1;
-        font-family: 'bootstrap-icons';
-        text-decoration: inherit;
-        font-weight: normal;
-        font-style: normal;
-        vertical-align: top;
+    /* highlight selected tool */
+    .mode_admin a.action.admin,
+    .mode_login a.action.login,
+    .mode_register a.action.register,
+    .mode_profile a.action.profile,
+    .mode_recent a.action.recent,
+    .mode_index a.action.index,
+    .mode_media a.action.media,
+    .mode_revisions a.action.revs,
+    .mode_backlink a.action.backlink,
+    .mode_subscribe a.action.subscribe {
+        background-color: transparent;
     }
 
-    a           span.icon:before { content: '\F28A'; }
-
-    a.edit      span.icon:before { content: '\F4CA'; }
-    a.create    span.icon:before { content: '\F64D'; }
-    a.show      span.icon:before { content: '\F341'; }
-    a.source    span.icon:before { content: '\F2C6'; }
-    a.draft     span.icon:before { content: '\F38B'; }
-    a.revs      span.icon:before { content: '\F292'; }
-    a.backlink  span.icon:before { content: '\F470'; }
-    a.top       span.icon:before { content: '\F278'; }
-    a.revert    span.icon:before { content: '\F117'; }
-    a.subscribe span.icon:before { content: '\F18A'; }
-}
-
-.site-tools {
-    a span {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        -webkit-font-smoothing: antialiased;
-        font-size: 20px;
-        line-height: 1;
-        font-family: 'bootstrap-icons';
-        text-decoration: inherit;
-        font-weight: normal;
-        font-style: normal;
-        vertical-align: top;
+    .loggedIn{
+        .site-tools ul li:has(> a.action.media), .user-tools ul li:has(> a.action.admin), .page-tools ul li:has(> a.action.revs) {
+            display: block;
+        }
     }
 
-    a           span:before { content: '\F28A'; }
-    a.recent    span:before { content: '\F293'; }
-    a.index     span:before { content: '\F2EE'; }
-    a.media     span:before { content: '\F2CB'; }
-}
+    .page-tools {
+        ul {
+            list-style: none;
+            text-transform: uppercase;
+        }
+        li {
+            padding: 5px 0;
+        }
+        li:first-child {
+            padding-top: 0;
+        }
+        li:last-child {
+            padding-bottom: 0;
+        }
+        ul a {
+            color: @ini_background;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        ul a:hover {
+            color: @ini_theme_color_alt;
+        }
+        a span.icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            line-height: 1;
+            font-family: 'bootstrap-icons';
+            text-decoration: inherit;
+            font-weight: normal;
+            font-style: normal;
+            vertical-align: top;
+        }
 
-.user-tools {
-    a i {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        -webkit-font-smoothing: antialiased;
-        font-size: 20px;
-        line-height: 20px;
-        vertical-align: middle;
-        font-family: 'bootstrap-icons';
-        text-decoration: inherit;
-        font-weight: normal;
-        font-style: normal;
+        a           span.icon:before { content: '\F28A'; }
+
+        a.edit      span.icon:before { content: '\F4CA'; }
+        a.create    span.icon:before { content: '\F64D'; }
+        a.show      span.icon:before { content: '\F341'; }
+        a.source    span.icon:before { content: '\F2C6'; }
+        a.draft     span.icon:before { content: '\F38B'; }
+        a.revs      span.icon:before { content: '\F292'; }
+        a.backlink  span.icon:before { content: '\F470'; }
+        a.top       span.icon:before { content: '\F278'; }
+        a.revert    span.icon:before { content: '\F117'; }
+        a.subscribe span.icon:before { content: '\F18A'; }
     }
 
-    a           i:before { content: '\F28A'; }
-    a.admin     i:before { content: '\F3E5'; }
-    a.login     i:before { content: '\F1BE'; }
-    a.logout    i:before { content: '\F1C3'; }
-    a.register  i:before { content: '\F89A'; }
-    a.profile   i:before { content: '\F4CB'; }
+    .site-tools {
+        a span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            line-height: 1;
+            font-family: 'bootstrap-icons';
+            text-decoration: inherit;
+            font-weight: normal;
+            font-style: normal;
+            vertical-align: top;
+        }
 
-    p.user:before {
-        font-family: 'bootstrap-icons';
-        content: "\F4E1";
-        font-size: 20px;
-        padding-right: 4px;
-        line-height: 20px;
-        vertical-align: middle;
+        a           span:before { content: '\F28A'; }
+        a.recent    span:before { content: '\F293'; }
+        a.index     span:before { content: '\F2EE'; }
+        a.media     span:before { content: '\F2CB'; }
+    }
+
+    .user-tools {
+        a i {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            font-family: 'bootstrap-icons';
+            text-decoration: inherit;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        a           i:before { content: '\F28A'; }
+        a.admin     i:before { content: '\F3E5'; }
+        a.login     i:before { content: '\F1BE'; }
+        a.logout    i:before { content: '\F1C3'; }
+        a.register  i:before { content: '\F89A'; }
+        a.profile   i:before { content: '\F4CB'; }
+
+        p.user:before {
+            font-family: 'bootstrap-icons';
+            content: "\F4E1";
+            font-size: 20px;
+            padding-right: 4px;
+            line-height: 20px;
+            vertical-align: middle;
+        }
     }
 }
 
@@ -199,7 +200,6 @@
 
 }
 
-/* /@media */
 @media only screen and (max-width: 959px) {
     #writr__sidebar {
         margin-bottom: 0px;
