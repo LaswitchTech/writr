@@ -259,3 +259,36 @@
         }
     }
 }
+/* 960px > x */
+@media only screen and (max-width: 959px) {
+    .enableToolbar {
+        #writr__page {
+            margin-top: 64px;
+        }
+        #writr__toolbar {
+            flex-direction: column;
+            background: @ini_text_alt;
+
+            > * {
+                background: @ini_text_alt;
+                width: 100vw;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+                vertical-align: middle;
+                display: flex;
+            }
+
+            .hook {
+                justify-content: center;
+            }
+
+            .user-tools {
+
+                .dropdown-menu {
+                    width: 100vw;
+                }
+            }
+        }
+    }
+}
