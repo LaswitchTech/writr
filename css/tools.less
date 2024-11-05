@@ -131,80 +131,152 @@
 
 @media only screen and (min-width: 960px) {
 
-.page-tools {
-    position: fixed;
-    top: 40px;
-    left: 320px;
+    .page-tools {
+        position: fixed;
+        top: 40px;
+        left: 320px;
 
-    a.action,
-    a.menuitem {
-        width: 60px;
-        height: 60px;
-        display: block;
-    }
-    a span {
-        width: 60px;
-        display: block;
-        text-align: center;
-    }
-    a span.icon {
-        width: 60px;
-        height: 60px;
-        background: @ini_text_neu;
-        color: @ini_background;
-        font-size: 30px;
-        line-height: 2;
+        a.action,
+        a.menuitem {
+            width: 60px;
+            height: 60px;
+            display: block;
+        }
+        a span {
+            width: 60px;
+            display: block;
+            text-align: center;
+        }
+        a span.icon {
+            width: 60px;
+            height: 60px;
+            background: @ini_text_neu;
+            color: @ini_background;
+            font-size: 30px;
+            line-height: 2;
 
-        -webkit-border-radius: 50%;
-        -moz-border-radius:    50%;
-        border-radius:         50%;
-        transition:         all 0.25s ease-in-out;
-    }
+            -webkit-border-radius: 50%;
+            -moz-border-radius:    50%;
+            border-radius:         50%;
+            transition:         all 0.25s ease-in-out;
+        }
 
-    a:hover span.icon {
-        background: @ini_background;
-        color: @ini_text_alt;
-    }
+        a:hover span.icon {
+            background: @ini_background;
+            color: @ini_text_alt;
+        }
 
-    a:focus {
-        outline: none;
+        a:focus {
+            outline: none;
 
-        span.icon {
-            background-color: @ini_theme_color;
-            color: #fff;
+            span.icon {
+                background-color: @ini_theme_color;
+                color: #fff;
+            }
         }
     }
-}
 
-.mode_revisions .page-tools a.revs span.icon,
-.mode_backlink .page-tools a.backlink span.icon,
-.mode_revert .page-tools a.revert span.icon,
-.mode_subscribe .page-tools a.subscribe span.icon {
-    background: @ini_background;
-    color: @ini_text_alt;
-    position: relative;
+    .mode_revisions .page-tools a.revs span.icon,
+    .mode_backlink .page-tools a.backlink span.icon,
+    .mode_revert .page-tools a.revert span.icon,
+    .mode_subscribe .page-tools a.subscribe span.icon {
+        background: @ini_background;
+        color: @ini_text_alt;
+        position: relative;
 
-    &:after {
-        content: '';
-        z-index: 2;
-        display: block;
-        position: absolute;
-        top: 25px;
-        right: -25px;
-        border-left: 5px solid @ini_text_alt;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
+        &:after {
+            content: '';
+            z-index: 2;
+            display: block;
+            position: absolute;
+            top: 25px;
+            right: -25px;
+            border-left: 5px solid @ini_text_alt;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
     }
+
 }
 
-} /* /@media */
-
+/* /@media */
 @media only screen and (max-width: 959px) {
-    .page-tools .a11y {
-        position: static !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: auto !important;
-        height: auto !important;
+    #writr__sidebar {
+        margin-bottom: 0px;
+    }
+
+    .page-tools {
+
+        ul {
+            background: @ini_text_alt;
+            margin-bottom: 0px;
+            width: 100vw;
+            height: 60px;
+
+            li:has(a.top) {
+                position: fixed;
+                bottom: 8px;
+                right: 8px;
+                z-index: 999;
+            }
+
+            li:has(a.create),
+            li:has(a.show),
+            li:has(a.edit) {
+                position: fixed;
+                top: 68px;
+                right: 8px;
+                z-index: 999;
+            }
+
+            li:first-child {
+                padding-top: 4px;
+                padding-left: 8px;
+            }
+
+            li {
+                float: left;
+                padding: 4px;
+
+                a.action,
+                a.menuitem {
+                    width: 48px;
+                    height: 48px;
+                    display: block;
+                }
+                a span {
+                    width: 48px;
+                    display: block;
+                    text-align: center;
+                }
+                a span.icon {
+                    width: 48px;
+                    height: 48px;
+                    background: @ini_text_neu;
+                    color: @ini_background;
+                    font-size: 24px;
+                    line-height: 2;
+
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius:    50%;
+                    border-radius:         50%;
+                    transition:         all 0.25s ease-in-out;
+                }
+
+                a:hover span.icon {
+                    background: @ini_background;
+                    color: @ini_text_alt;
+                }
+
+                a:focus {
+                    outline: none;
+
+                    span.icon {
+                        background-color: @ini_theme_color;
+                        color: #fff;
+                    }
+                }
+            }
+        }
     }
 }
