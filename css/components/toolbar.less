@@ -39,27 +39,6 @@
             vertical-align: middle;
             color:@ini_background;
 
-            a.mail {
-                display: flex !important;
-                align-items: center;
-                align-content: center;
-            }
-
-            a[href*="github.com/sponsors/"] {
-                display: flex !important;
-                align-items: center;
-                align-content: center;
-            }
-
-            a[href*="github.com/sponsors/"]:before {
-                content: "\F417";
-                font-family: "bootstrap-icons";
-                display: inline-block;
-                margin-right: 4px;
-                font-size: 1.2em;
-                color: #e60073;
-            }
-
             > p,
             > a,
             > ol,
@@ -134,6 +113,9 @@
                         }
                         a.mail {
                             background-image: none;
+                            display: flex !important;
+                            align-items: center;
+                            align-content: center;
                         }
                         a.mail::before {
                             content: '\F32F';
@@ -143,7 +125,20 @@
                             height: 16px;
                             width: 16px;
                             vertical-align: middle;
-                            margin-right: 8px;
+                            margin-right: 4px;
+                        }
+                        a[href*="github.com/sponsors/"] {
+                            display: flex !important;
+                            align-items: center;
+                            align-content: center;
+                        }
+                        a[href*="github.com/sponsors/"]:before {
+                            content: "\F417";
+                            font-family: "bootstrap-icons";
+                            display: inline-block;
+                            margin-right: 4px;
+                            font-size: 1.2em;
+                            color: #e60073;
                         }
                     }
                     div.li:has(a) {
