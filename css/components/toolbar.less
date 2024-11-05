@@ -39,6 +39,27 @@
             vertical-align: middle;
             color:@ini_background;
 
+            a.mail {
+                display: flex !important;
+                align-items: center;
+                align-content: center;
+            }
+
+            a[href*="github.com/sponsors/"] {
+                display: flex !important;
+                align-items: center;
+                align-content: center;
+            }
+
+            a[href*="github.com/sponsors/"]:before {
+                content: "\F417";
+                font-family: "bootstrap-icons";
+                display: inline-block;
+                margin-right: 4px;
+                font-size: 1.2em;
+                color: #e60073;
+            }
+
             > p,
             > a,
             > ol,
