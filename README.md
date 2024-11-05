@@ -41,7 +41,7 @@ Contributions to Writr are welcome! If you have ideas for new features or have f
   - **Resetting and rebuilding styles** have been helped along thanks to the work of [Eric Meyer](http://meyerweb.com/eric/tools/css/reset/index.html) along with Nicolas Gallagher and [Jonathan Neal](http://necolas.github.com/normalize.css/) and [Blueprint](http://www.blueprintcss.org/).
 
 ## Wait, where is the documentation?
-Review the [Documentation](https://laswitchtech.com/en/blog/projects/writr/index).
+Review the [Documentation](https://laswitchtech.com/en/projects/writr/index).
 
 ## GitHub Stats
 ![Alt](https://repobeats.axiom.co/api/embed/b287c1867e50d7abd181fed102056c6d5024c053.svg "Repobeats analytics image")
