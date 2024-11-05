@@ -10,7 +10,31 @@
 	margin-left: auto;
 }
 
-.hfeed ~ .plugin_include_content .inclmeta {
-    margin-top: 16px;
-    margin-bottom: 16px;
+.hfeed ~ .plugin_include_content {
+
+    > h2 {
+        text-transform: uppercase;
+        width: @ini_content_width;
+        background: @ini_border;
+        padding: 20px 40px;
+        margin-left: -40px;
+        margin-right: -40px;
+        font-weight: bold;
+
+        a {
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+    }
+    .inclmeta {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}
+.makeFullWidth {
+    .hfeed ~ .plugin_include_content {
+        > h2 {
+            width: ~"calc(100vw - 400px - @{ini_content_border})";
+        }
+    }
 }
