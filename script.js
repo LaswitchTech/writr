@@ -280,6 +280,9 @@ jQuery(document).ready(function() {
         }
     }
 
+    /*
+     * Run the functions
+     */
     jQuery(function(){
         toggleSidebar();
         toggleNavigation();
@@ -293,5 +296,14 @@ jQuery(document).ready(function() {
         enableTooltips();
         enableCollapse();
         enableFileInput();
+    });
+
+    /*
+     * NSPAGES enable multi-line support
+     */
+    jQuery('.nspagesPicturesModeTitle').each(function() {
+        if (jQuery(this).prop('scrollHeight') > 32) {
+            jQuery(this).addClass('multi-line');
+        }
     });
 });

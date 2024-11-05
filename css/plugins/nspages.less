@@ -3,49 +3,57 @@
 
 .dokuwiki {
 
-  .nspagesPicturesModeMain {
+    .nspagesPicturesModeMain {
 
-    a {
-      border-radius: 20px;
-      border-color: @ini_text_alt;
-      transition: all 0.5s ease;
-      max-width: none;
-      margin: 0px;
-      padding: 8px;
-      width: 33.33%;
-      background-color: transparent;
-      height: 250px;
+        a {
+            border-radius: 20px;
+            border-color: @ini_text_alt;
+            transition: all 0.5s ease;
+            max-width: none;
+            margin: 0px;
+            padding: 8px;
+            width: 33.33%;
+            background-color: transparent;
+            height: 250px;
 
-      .nspagesPicturesModeImg {
-        border-radius: 20px;
-        border-width: 4px !important;
-        border-color: @ini_text_alt;
-        border: 4px solid @ini_text_alt;
-        height: 100%;
-        transition: inherit;
+            .nspagesPicturesModeImg {
+                border-radius: 20px;
+                border-width: 4px !important;
+                border-color: @ini_text_alt;
+                border: 4px solid @ini_text_alt;
+                height: 100%;
+                transition: inherit;
 
-        .nspagesPicturesModeTitle {
-          background-color: @ini_text_alt;
-          color: @ini_background;
-          padding: 4px 16px;
-          border-top-right-radius: 16px;
-          border-bottom-right-radius: 16px;
-          transition: inherit;
+                .nspagesPicturesModeTitle {
+                    background-color: @ini_text_alt;
+                    color: @ini_background;
+                    padding: 4px 16px;
+                    border-top-right-radius: 16px;
+                    border-bottom-right-radius: 16px;
+                    transition: inherit;
+
+                    max-height: 32px;
+                    overflow: hidden;
+
+                    &.multi-line {
+                        max-height: 56px;
+                        border-bottom-right-radius: 0px;
+                    }
+                }
+            }
         }
-      }
-    }
-    a:hover {
-      background-color: transparent;
+        a:hover {
+            background-color: transparent;
 
-      .nspagesPicturesModeImg {
-        border-color: @ini_theme_color;
+            .nspagesPicturesModeImg {
+                border-color: @ini_theme_color;
 
-        .nspagesPicturesModeTitle {
-          background-color: @ini_theme_color;
+                .nspagesPicturesModeTitle {
+                    background-color: @ini_theme_color;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 /* 960px > x */
