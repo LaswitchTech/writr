@@ -79,6 +79,39 @@
             border-radius: 5px;
         }
     }
+
+    > h2, > h2[class^="include_firsttag"] {
+        text-transform: uppercase;
+        width: @ini_content_width;
+        background: @ini_border;
+        padding: 20px 40px;
+        margin-left: -40px;
+        margin-right: -40px;
+        font-weight: bold;
+
+        a {
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+    }
+}
+.makeFullWidth {
+    .plugin_include_content {
+        > h2, > h2[class^="include_firsttag"] {
+            width: ~"calc(100vw - 400px - @{ini_content_border})";
+        }
+    }
+}
+
+/* 960px > x */
+@media only screen and (max-width: 959px) {
+    .makeFullWidth {
+        .plugin_include_content {
+            > h2, > h2[class^="include_firsttag"] {
+                width: 100vw;
+            }
+        }
+    }
 }
 
 p.include_readmore {
