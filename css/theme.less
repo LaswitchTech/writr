@@ -114,8 +114,25 @@ body:before {
     -moz-box-sizing:    border-box;
     box-sizing:         border-box;
 }
+
+#writr__main {
+    > h1:first-of-type {
+        text-transform: uppercase;
+        width: @ini_content_width;
+        background: @ini_border;
+        padding: 20px 40px;
+        margin-left: -40px;
+        margin-right: -40px;
+        font-weight: bold;
+        width: @ini_content_width;
+    }
+}
 .makeFullWidth #writr__main {
-  width: ~"calc(100vw - 400px - 80px - @{ini_content_border})";
+    width: ~"calc(100vw - 400px - 80px - @{ini_content_border})";
+
+    > h1:first-of-type {
+        width: ~"calc(100vw - 400px - @{ini_content_border})";
+    }
 }
 
 /* Sidebar */
