@@ -81,7 +81,7 @@
     }
 
     > h1:first-of-type,
-    > h2[class^="include_firsttag"] {
+    > h2 {
         text-transform: uppercase;
         width: @ini_content_width;
         background: @ini_border;
@@ -96,10 +96,11 @@
         }
     }
 }
+
 .makeFullWidth {
     .plugin_include_content {
         > h1:first-of-type,
-        > h2[class^="include_firsttag"] {
+        > h2 {
             width: ~"calc(100vw - 400px - @{ini_content_border})";
         }
     }
@@ -110,7 +111,7 @@
     .makeFullWidth {
         .plugin_include_content {
             > h1:first-of-type,
-            > h2[class^="include_firsttag"] {
+            > h2 {
                 width: 100vw;
             }
         }
