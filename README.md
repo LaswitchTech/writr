@@ -4,6 +4,7 @@
 ![License](https://img.shields.io/github/license/LaswitchTech/writr?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LaswitchTech/writr?style=for-the-badge&logo=github)
 ![GitHub top language](https://img.shields.io/github/languages/top/LaswitchTech/writr?style=for-the-badge)
+![GitHub Downloads](https://img.shields.io/github/downloads/LaswitchTech/writr/total?style=for-the-badge)
 ![Version](https://img.shields.io/github/v/release/LaswitchTech/writr?label=Version&style=for-the-badge)
 
 ## Description
@@ -12,14 +13,14 @@
 This template was converted from the WordPress theme Writr. It was voted for by [DokuWiki](https://www.dokuwiki.org) users from a selection of 19 other WordPress themes to convert.
 
 ## Features
-- Improve the general aesthetic for a more modern look and consistency
-- Personalize using template's configurations and template's style configurations
-- Support for Bootstrap Icons
-- Support for many DokuWiki Plugins
-- A new toolbar is now available in the template configuration. Based on the original WordPress Theme Writr.
-- A new set of tooltips is now available in the template configuration.
-- Hide/Show Site-Tools based on user login. (CMS mode)
-- Set Site Identity per namespace including Logo, Title, Link and Tagline
+  - Improve the general aesthetic for a more modern look and consistency
+  - Personalize using template's configurations and template's style configurations
+  - Support for Bootstrap Icons
+  - Support for many DokuWiki Plugins
+  - A new toolbar is now available in the template configuration. Based on the original WordPress Theme Writr.
+  - A new set of tooltips is now available in the template configuration.
+  - Hide/Show Site-Tools based on user login. (CMS mode)
+  - Set Site Identity per namespace including Logo, Title, Link and Tagline.
 
 ## License
 This software is distributed under the [GPL2](COPYING) license.
@@ -42,6 +43,9 @@ Contributions to Writr are welcome! If you have ideas for new features or have f
 
 ## Wait, where is the documentation?
 Review the [Documentation](https://laswitchtech.com/en/projects/writr/index).
+
+## What about the download button?
+The download button is available [here](https://github.com/LaswitchTech/writr/releases/latest/download/source.zip).
 
 ## GitHub Stats
 ![Alt](https://repobeats.axiom.co/api/embed/b287c1867e50d7abd181fed102056c6d5024c053.svg "Repobeats analytics image")
