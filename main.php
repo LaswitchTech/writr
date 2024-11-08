@@ -3,6 +3,7 @@
  * DokuWiki Writr Template
  *
  * @link     http://dokuwiki.org/template:writr
+ * @author   Louis Ouellet <support@laswitchtech.com>
  * @author   Anika Henke <anika@selfthinker.org>
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */

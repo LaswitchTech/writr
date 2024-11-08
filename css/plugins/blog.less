@@ -44,6 +44,24 @@
     .makeFullWidth {
         .hfeed ~ .plugin_include_content {
             > h2 {
+                width: @ini_content_width;
+            }
+        }
+    }
+    .makeFullWidth {
+        .hfeed ~ .plugin_include_content {
+            > h2 {
+                width: ~"calc(100vw - 40px - 100px)";
+            }
+        }
+    }
+}
+
+/* 767px > x */
+@media only screen and (max-width: 767px) {
+    .makeFullWidth {
+        .hfeed ~ .plugin_include_content {
+            > h2 {
                 width: 100vw;
             }
         }
