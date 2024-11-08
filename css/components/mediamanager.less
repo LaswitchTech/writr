@@ -1,0 +1,163 @@
+/* =Media Manager
+----------------------------------------------- */
+
+.mode_media {
+
+    > div {
+        padding: 20px 0px 20px 80px !important;
+    }
+    #writr__toolbar {
+        display: none!important;
+    }
+    #writr__page {
+        #writr__sidebar {
+            position: fixed;
+            .site-header {
+                .site-logo {
+                    display: block;
+                    position: fixed;
+                    top: 5px;
+                    left: 5px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .page-tools {
+            display: none;
+        }
+        .content-area {
+            float: none;
+            #writr__main {
+                width: 100%;
+                #mediamanager__page{
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    h1 {
+                        width: 100%;
+                        padding: 10px 20px;
+                    }
+                    .panel {
+                        &.namespaces {
+                            width: 20%;
+                            min-width: 160px;
+                            padding-top: 1px;
+                            .panelContent {
+                                padding: 10px;
+                            }
+                        }
+                        &.filelist {
+                            flex-grow: 1;
+                            width: 50%;
+                            max-width: ~"calc(100vw - 280px)";
+                            .tabs {
+                                margin-right: 0px;
+                            }
+                        }
+                        &.file {
+                            width: 30%;
+                            min-width: 280px;
+                            .panelContent {
+                                .image {
+                                    margin-top: 20px;
+                                }
+                                .actions {
+                                    margin-top: 10px;
+                                }
+                                dl {
+                                    margin-top: 20px;
+                                    dt {
+                                        margin-right: 0px;
+                                    }
+                                    dd {
+                                        padding: 10px 20px;
+                                    }
+                                }
+                            }
+                        }
+                        .panelHeader,
+                        .panelContent {
+                            margin: 0;
+                        }
+                        .ui-resizable-handle{
+                            display: none!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.enableToolbar {
+        #writr__page {
+            margin-top: 0px;
+        }
+    }
+    &::before {
+        width: 20px!important;
+        left: 60px!important;
+    }
+    &::after {
+        width: 60px!important;
+    }
+}
+
+/* 959px > x */
+@media only screen and (max-width: 959px) {
+    .mode_media {
+        #writr__page {
+            .content-area {
+                #writr__main {
+                    #mediamanager__page{
+                        .panel {
+                            &.filelist {
+                                min-width: auto;
+                            }
+                            &.file {
+                                width: ~"calc(100vw - 80px)";
+                                .panelContent {
+                                    .action,
+                                    .image {
+                                        width: ~"calc(100vw - 80px)";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 767px > x */
+@media only screen and (max-width: 767px) {
+    .mode_media {
+        #writr__page {
+            padding: 0px!important;
+            #writr__sidebar {
+                display: none;
+            }
+            .content-area {
+                padding-left: 0px;
+                #writr__main {
+                    #mediamanager__page{
+                        .panel {
+                            &.filelist {
+                                max-width: ~"calc(100vw - 180px)";
+                            }
+                            &.file {
+                                width: 100vw;
+                                .panelContent {
+                                    .action,
+                                    .image {
+                                        width: 100vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
