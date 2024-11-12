@@ -23,5 +23,6 @@ $lang['doTaglineChangesByNamespace']        = 'Should the site tagline changes b
 
 $lang['_plugins']                           = 'Configure Plugins';
 $lang['defaultAddNewPage']                  = 'Namespace for AddNewPage plugin';
+$lang['enableStarredBookmark']              = 'Enable the Starred Bookmarks in the Toolbar';
 
 $lang['_customizations']                    = 'Customize the Template';

@@ -25,5 +25,6 @@ $meta['doTaglineChangesByNamespace']    = array('onoff');
 
 $meta['_plugins']                       = array('fieldset');
 $meta['defaultAddNewPage']              = array('string');
+$meta['enableStarredBookmark']          = array('onoff');
 
 $meta['_customizations']                = array('fieldset');

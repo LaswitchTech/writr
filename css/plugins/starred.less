@@ -1,6 +1,65 @@
 /* =Starred Plugin
 ----------------------------------------------- */
 
+.dropdown.bookmarks {
+    .dropdown-menu {
+        min-width: 400px;
+
+        li {
+            display: flex;
+            flex-direction: row;
+
+            > * {
+                flex-grow: 1;
+                cursor: pointer;
+                line-height: 19px;
+
+                &.curid {
+                    font-weight: normal!important;
+                    a {
+                        font-weight: bold!important;
+                        &:before {
+                            font-family: 'bootstrap-icons';
+                            content: "\F231";
+                            font-size: 16px;
+                            padding-right: 4px;
+                            // line-height: 16px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                &.plugin__starred {
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    width: 48px;
+
+                    span {
+                        svg {
+                            display:none;
+                        }
+                        &.starred:before {
+                            font-family: "bootstrap-icons";
+                            font-size: 16px;
+                        }
+                        &.on:before { content: '\F586'; }
+                        &.off:before { content: '\F588'; }
+                    }
+                }
+            }
+            &:last-child {
+                a {
+                    &[data-wiki-id]{
+                        border-bottom-right-radius: 0px!important;
+                    }
+                    &.plugin__starred {
+                        border-bottom-left-radius: 0px!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 960px) {
     .page-tools {
         a.plugin__starred {

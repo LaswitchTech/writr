@@ -126,24 +126,52 @@ if (!function_exists('tpl_getUserMenu')) {
         $items = (new \dokuwiki\Menu\UserMenu())->getItems();
 
         if(isset($INFO['userinfo'])){
-            $return .= '<div class="dropdown user-tools">';
-                $return .= '<a href="'.wl($ID).'" class="dropdown-toggle" title="'.$lang['user_tools'].'" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
-                    $return .= '<i class="bi bi-person"></i>'.$INFO['userinfo']['name'];
-                $return .= '</a>';
-                $return .= '<ul class="dropdown-menu" role="menu">';
-                    $return .= '<li>';
-                        $return .= '<p class="avatar">';
-                            $return .= '<img alt="'.$INFO['userinfo']['name'].'" src="'.tpl_getGravatarURL($INFO['userinfo']['mail']).'" />';
-                        $return .= '</p>';
-                    $return .= '</li>';
-                    foreach($items as $item) {
-                        $return .= '<li>'
-                            .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
-                            .'<i></i> '
-                            .$item->getLabel()
-                            .'</a></li>';
+            $return .= '<div class="tools-menus">';
+                $return .= '<div class="dropdown user-tools">';
+                    $return .= '<a href="'.wl($ID).'" class="dropdown-toggle" title="'.$lang['user_tools'].'" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
+                        $return .= '<i class="bi bi-person"></i>'.$INFO['userinfo']['name'];
+                    $return .= '</a>';
+                    $return .= '<ul class="dropdown-menu" role="menu">';
+                        $return .= '<li>';
+                            $return .= '<p class="avatar">';
+                                $return .= '<img alt="'.$INFO['userinfo']['name'].'" src="'.tpl_getGravatarURL($INFO['userinfo']['mail']).'" />';
+                            $return .= '</p>';
+                        $return .= '</li>';
+                        foreach($items as $item) {
+                            $return .= '<li>'
+                                .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
+                                .'<i></i> '
+                                .$item->getLabel()
+                                .'</a></li>';
+                        }
+                    $return .= '</ul>';
+                $return .= '</div>';
+                if(tpl_getConf('enableStarredBookmark')){
+                    if (!plugin_isdisabled('sqlite')) {
+                        if (!plugin_isdisabled('starred')) {
+                            $return .= '<div class="dropdown bookmarks">';
+                                $return .= '<a href="#" class="dropdown-toggle starred" title="'.tpl_getLang('Bookmarks').'" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
+                                    $return .= '<i class="bi bi-star"></i>'.tpl_getLang('Bookmarks');
+                                $return .= '</a>';
+                                $return .= '<ul class="dropdown-menu" role="menu">';
+                                $instructions = p_get_instructions('{{starred>min}}');
+                                if(count($instructions) <= 3) {
+                                    $render = p_render('xhtml',$instructions,$info);
+                                    // Sanitize the output
+                                    $render = preg_replace('/<div class="plugin_starred">/', '', $render);
+                                    $render = preg_replace('/<\/div>/', '', $render);
+                                    $render = preg_replace('/<div class="li">/', '', $render);
+                                    $render = preg_replace('/<\/div>/', '', $render);
+                                    $render = preg_replace('/<ul>/', '', $render);
+                                    $render = preg_replace('/<\/ul>/', '', $render);
+                                    $render = preg_replace('/<li class="level1">/', '<li>', $render);
+                                    $return .= $render;
+                                }
+                                $return .= '</ul>';
+                            $return .= '</div>';
+                        }
                     }
-                $return .= '</ul>';
+                }
             $return .= '</div>';
         } else {
             $return .= '<div class="inline user-tools">';

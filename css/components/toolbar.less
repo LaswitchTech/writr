@@ -224,6 +224,7 @@
             }
         }
 
+        .dropdown.bookmarks,
         .dropdown.user-tools {
             float:right;
             color:@ini_background;
@@ -308,10 +309,14 @@
                 justify-content: center;
             }
 
+            .bookmarks,
             .user-tools {
 
                 .dropdown-menu {
                     width: 100vw;
+                    position: fixed;
+                    top: 64px;
+                    left: 0px;
                 }
             }
         }

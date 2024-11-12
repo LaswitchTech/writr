@@ -25,5 +25,6 @@ $conf['doTaglineChangesByNamespace']    = 0;
 
 $conf['_plugins']                       = '';
 $conf['defaultAddNewPage']              = '';
+$conf['enableStarredBookmark']          = 0;
 
 $conf['_customizations']                = '';
