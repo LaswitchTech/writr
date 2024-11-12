@@ -1,0 +1,51 @@
+/* =Starred Plugin
+----------------------------------------------- */
+
+@media only screen and (min-width: 960px) {
+
+    .page-tools {
+        a.plugin__starred {
+            span {
+                width: 60px;
+                height: 60px;
+                background: @ini_text_neu;
+                color: @ini_background;
+                font-size: 30px;
+                line-height: 2;
+
+                -webkit-border-radius: 50%;
+                -moz-border-radius:    50%;
+                border-radius:         50%;
+                transition:         all 0.25s ease-in-out;
+
+                svg {
+                    display:none;
+                }
+
+                &.starred:before { font-family: "bootstrap-icons"; }
+                &.on:before { content: '\F586'; }
+                &.off:before { content: '\F588'; }
+            }
+
+            &:hover span {
+                background: @ini_background;
+                color: @ini_text_alt;
+            }
+
+            &:focus {
+                outline: none;
+
+                span {
+                    background-color: @ini_theme_color;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 959px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
