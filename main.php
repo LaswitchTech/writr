@@ -131,6 +131,13 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     }
                     ?>
                 <?php endif ?>
+                <?php
+                    $starred = plugin_load('action','starred');
+                    if ($starred) {
+                        $render = $starred->tpl_starred(false,false);
+                        echo '<li>'.$render.'</li>';
+                    }
+                ?>
                 <?php $translation = plugin_load('helper','translation');
                 if ($translation){
                     $render = $translation->showTranslations(false);
