@@ -1,0 +1,103 @@
+/* =Struct Plugin
+----------------------------------------------- */
+
+.dokuwiki {
+    .struct_status {
+        width: 100%;
+        height: 40px;
+        padding: 5px 10px;
+        background: transparent;
+        color: @ini_text;
+        border: 5px solid @ini_background_alt;
+        font-size: 14px;
+        line-height: 1.43;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing:    border-box;
+        box-sizing:         border-box;
+        -webkit-appearance: none;
+        -webkit-border-radius: 20px;
+        -moz-border-radius:    20px;
+        border-radius:         20px;
+    }
+    .structaggregation {
+        table {
+            button.delete {
+                background: @ini_theme_color;
+                color: @ini_background;
+                border: 0;
+                padding: 4px 12px;
+                height: 40px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius:    20px;
+                border-radius:         20px;
+                transition: all 0.5s ease;
+                i {
+                    background-image: none;
+                    display: inline;
+                    font-style: normal;
+                    margin-top: 0px;
+
+                    &:before {
+                        font-family: "bootstrap-icons";
+                        content: "\F5DE";
+                        font-size: 16px;
+                        font-weight: normal;
+                        line-height: 16px;
+                        vertical-align: middle;
+                        color: @ini_background;
+                    }
+                }
+                &:hover {
+                    background: @ini_theme_color_alt;
+                }
+            }
+        }
+    }
+    .struct_entry_form {
+        div.field {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            vertical-align: middle;
+            transition: all 0.5s ease;
+            padding: 8px;
+
+            label {
+                text-align: right;
+
+                span.label {
+                    text-align: right;
+                    padding-right: 24px;
+                }
+            }
+            &:has(> label[data-column*=".hidden_"]) {
+                display: none;
+            }
+            &:hover {
+                input, select, textarea {
+                    border: 5px solid @ini_theme_color !important;
+                }
+            }
+        }
+        button[type="submit"] {
+            background: @ini_theme_color;
+            color: @ini_background;
+            border: 0;
+            margin: 16px 16px 8px 16px;
+            height: 40px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius:    20px;
+            border-radius:         20px;
+            transition: all 0.5s ease;
+            &:hover {
+                background: @ini_theme_color_alt;
+            }
+        }
+    }
+    #plugin__struct_editor {
+        fieldset {
+            padding: 0px;
+            background: @ini_background_alt;
+        }
+    }
+}
