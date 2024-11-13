@@ -1,13 +1,114 @@
 /* =Bureaucracy Plugin
 ----------------------------------------------- */
 
-.dokuwiki div.bureaucracy__plugin {
-    width: 100%!important;
+.dokuwiki {
 
-    // p,ul {
-    //   display: none;
-    // }
-    // p:first-of-type {
-    //   display: block!important;
-    // }
+    div.bureaucracy__plugin {
+        width: 100%!important;
+    }
+    form.bureaucracy__plugin {
+        fieldset {
+            padding: 8px 0px;
+            width: 100%;
+
+            legend {
+                margin-left: 16px;
+            }
+
+            button, input[type="submit"], input[type="reset"] {
+                margin: 16px 16px 8px 16px;
+            }
+        }
+        label:not([data-column]) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            vertical-align: middle;
+            transition: all 0.5s ease;
+            padding: 8px;
+
+            > span {
+                flex-grow: 0;
+                padding-right: 8px;
+                width: 12em;
+                text-align: right;
+            }
+
+            > select,
+            > textarea,
+            > input:not([type="submit"]):not([type="button"]):not([type="reset"]) {
+                width: auto;
+                flex-grow: 1;
+            }
+
+            &:hover {
+                background: @ini_background_alt;
+                input, select, textarea {
+                    border: 5px solid @ini_theme_color !important;
+                }
+            }
+        }
+        div.field {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            vertical-align: middle;
+            transition: all 0.5s ease;
+            padding: 8px;
+
+            label {
+                flex-grow: 0;
+
+                span.label {
+                    padding-right: 8px;
+                    width: 12em;
+                }
+            }
+
+            span.input {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                vertical-align: middle;
+                width: auto;
+                flex-grow: 1;
+
+                label {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    vertical-align: middle;
+                }
+                &:has(button) {
+                    input {
+                        border-bottom-right-radius: 0px;
+                        border-top-right-radius: 0px;
+                    }
+                    button {
+                        height: 40px;
+                        border-bottom-left-radius: 0px;
+                        border-top-left-radius: 0px;
+                        padding-left: 15px;
+                        margin: 0px;
+
+                        img {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+
+            &:has(> label[data-column*=".hidden_"]) {
+                display: none;
+            }
+
+            &:hover {
+                background: @ini_background_alt;
+                input, select, textarea {
+                    border: 5px solid @ini_theme_color !important;
+                }
+            }
+        }
+    }
 }
