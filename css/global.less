@@ -206,22 +206,29 @@ video {
 }
 
 /* Forms */
+button{
+    color: @ini_background;
+}
 body,
 button,
 input,
 select,
 textarea {
-    color: @ini_background;
     font-family: @ini_font;
     font-size: 16px;
     line-height: 1.5;
     border-width: 3px;
 }
+body,
+input,
+select,
+textarea {
+    color: @ini_text;
+}
 button,
 input,
 select,
 textarea {
-    font-size: 100%; /* Corrects font size not being inherited in all browsers */
     margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
     vertical-align: baseline; /* Improves appearance and consistency in all browsers */
     *vertical-align: middle; /* Improves appearance and consistency in all browsers */
@@ -235,7 +242,7 @@ select {
     color: @ini_text_alt;
 }
 button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     padding: 10px 20px;
@@ -253,23 +260,32 @@ input[type="submit"] {
     box-sizing:         border-box;
 }
 button:hover,
-html input[type="button"]:hover,
+input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 button:focus,
-html input[type="button"]:focus,
+input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 button:active,
-html input[type="button"]:active,
+input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
     background: @ini_theme_color_alt;
 }
+
+// input[type="checkbox"] {
+//   margin-left: 10px;
+//   width: 16px;
+//   height: 16px;
+//   align-self: center;
+// }
 input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
     padding: 0; /* Addresses excess padding in IE8/9 */
+    width: 16px !important;
+    height: 16px !important;
 }
 input[type="search"] {
     -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
@@ -286,11 +302,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
     padding: 0;
 }
 select,
-input[type="text"],
-input[type="url"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
 textarea {
     width: 100%;
     height: 40px;
@@ -304,16 +316,20 @@ textarea {
     -moz-box-sizing:    border-box;
     box-sizing:         border-box;
     -webkit-appearance: none;
+    transition: all 0.5s ease;
+}
+table {
+    select,
+    input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+    textarea {
+        border: 5px solid @ini_background_neu;
+    }
 }
 select:focus,
-input[type="text"]:focus,
-input[type="url"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):focus,
 textarea:focus {
     outline: none;
-    border-color: @ini_background_neu;
+    border: 5px solid @ini_theme_color;
 }
 textarea {
     overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -335,14 +351,7 @@ textarea {
 
 button,
 select,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input[type="text"],
-input[type="url"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
+input:not([type="checkbox"]):not([type="radio"]),
 textarea {
     -webkit-border-radius: 20px;
     -moz-border-radius:    20px;
