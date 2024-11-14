@@ -199,10 +199,8 @@ if (!function_exists('tpl_getSidebarMenu')) {
         global $lang,$ID,$conf,$INFO;
 
         $userItems = (new \dokuwiki\Menu\UserMenu())->getItems();
-        $siteItems = (new \dokuwiki\Menu\SiteMenu())->getItems();
 
         $return = '';
-
         $return .= '<div id="writr__sidebar__tools">';
 
         if(isset($INFO['userinfo'])){
