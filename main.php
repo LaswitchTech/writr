@@ -119,7 +119,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     }
                     $instructions .= '}}';
                     $instructions = p_get_instructions($instructions);
-                    if(count($instructions) <= 3) {
+                    if(count($instructions) > 0) {
                         $render = p_render('xhtml',$instructions,$info);
                         echo '<li>'
                             .'<a href="#" class="action AddNewPage" title="'.tpl_getLang('AddNewPage').'">'

@@ -14,35 +14,18 @@
         top: 0px;
         width: 300px;
 
-        select.edit{
-            color: @ini_text;
-            background-color: @ini_background;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            border-radius: 20px;
-            border-color: @ini_background_alt;
-            padding-bottom: 5px;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 5px;
+        select,
+        textarea,
+        input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]) {
+            background: @ini_background;
             margin-bottom: 10px;
         }
 
-        input.edit{
-            border-color: @ini_background_alt;
-            color: @ini_text;
-            background-color: @ini_background;
-        }
-
-        input.button{
-            margin-top: 10px;
+        button,
+        input[type="submit"],
+        input[type="button"],
+        input[type="reset"] {
             width: 100%;
-            transition:         all 0.25s ease-in-out;
-        }
-
-        input.button:hover{
-            background-color: @ini_theme_color;
-            color: @ini_background;
         }
     }
 
