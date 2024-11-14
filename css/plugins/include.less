@@ -80,8 +80,8 @@
         }
     }
 
-    > h1:first-of-type,
-    > h2 {
+    > div > h1:first-of-type,
+    > div > h2 {
         text-transform: uppercase;
         width: @ini_content_width;
         background: @ini_border;
@@ -99,8 +99,8 @@
 
 .makeFullWidth {
     .plugin_include_content {
-        > h1:first-of-type,
-        > h2 {
+        > div > h1:first-of-type,
+        > div > h2 {
             width: ~"calc(100vw - 400px - @{ini_content_border})";
         }
     }
@@ -109,15 +109,15 @@
 /* 960px > x */
 @media only screen and (max-width: 959px) {
     .plugin_include_content {
-        > h1:first-of-type,
-        > h2 {
+        > div > h1:first-of-type,
+        > div > h2 {
             width: @ini_content_width;
         }
     }
     .makeFullWidth {
         .plugin_include_content {
-            > h1:first-of-type,
-            > h2 {
+            > div > h1:first-of-type,
+            > div > h2 {
                 width: ~"calc(100vw - 40px - 100px)";
             }
         }
@@ -128,8 +128,8 @@
 @media only screen and (max-width: 767px) {
     .makeFullWidth {
         .plugin_include_content {
-            > h1:first-of-type,
-            > h2 {
+            > div > h1:first-of-type,
+            > div > h2 {
                 width: 100vw;
             }
         }
