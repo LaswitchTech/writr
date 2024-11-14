@@ -155,8 +155,8 @@ if (!function_exists('tpl_getUserMenu')) {
                                 $return .= '</a>';
                                 $return .= '<ul class="dropdown-menu" role="menu">';
                                 $instructions = p_get_instructions('{{starred>min}}');
-                                if(count($instructions) <= 3) {
-                                    $render = p_render('xhtml',$instructions,$info);
+                                if(count($instructions) > 0) {
+                                    $render = p_render('xhtml',$instructions, $info);
                                     // Sanitize the output
                                     $render = preg_replace('/<div class="plugin_starred">/', '', $render);
                                     $render = preg_replace('/<\/div>/', '', $render);
