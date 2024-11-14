@@ -1,0 +1,80 @@
+/* =Form
+----------------------------------------------- */
+
+.dokuwiki {
+
+    form.doku_form {
+
+        fieldset {
+            padding: 8px 0px;
+            width: 100%;
+
+            legend {
+                margin-left: 16px;
+            }
+
+            button, input[type="submit"], input[type="reset"] {
+                margin: 16px 16px 8px 16px;
+            }
+        }
+
+        label:not([data-column]) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            vertical-align: middle;
+            transition: all 0.5s ease;
+            padding: 8px;
+
+            > span {
+                flex-grow: 0;
+                padding-right: 8px;
+                width: 12em;
+                text-align: right;
+            }
+
+            > select,
+            > textarea,
+            > input:not([type="submit"]):not([type="button"]):not([type="reset"]) {
+                width: auto;
+                flex-grow: 1;
+            }
+
+            &:hover {
+                background: @ini_background_alt;
+                input, select, textarea {
+                    border: 5px solid @ini_theme_color !important;
+                }
+            }
+        }
+    }
+
+    #dw__login,
+    #dw__resendpwd,
+    #dw__register {
+
+        fieldset {
+            text-align: left;
+        }
+        br {
+            display: none;
+        }
+        label[for="remember__me"] {
+            margin-left: 0px;
+            margin-bottom: 0px;
+            flex-direction: row-reverse;
+            text-align: left;
+
+            > input:not([type="submit"]):not([type="button"]):not([type="reset"]) {
+                flex-grow: 0;
+                margin-right: auto;
+            }
+        }
+        button[type="submit"] {
+            float: right;
+        }
+        p {
+            margin-top: 16px;
+        }
+    }
+}
