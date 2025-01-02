@@ -12,7 +12,7 @@
 
 .hfeed ~ .plugin_include_content {
 
-    > div > h2 {
+    > div > h2, > h2 {
         text-transform: uppercase;
         width: @ini_content_width;
         background: @ini_border;
@@ -33,7 +33,7 @@
 }
 .makeFullWidth {
     .hfeed ~ .plugin_include_content {
-        > div > h2 {
+        > div > h2, > h2 {
             width: ~"calc(100vw - 400px - @{ini_content_border})";
         }
     }
@@ -43,14 +43,14 @@
 @media only screen and (max-width: 959px) {
     .makeFullWidth {
         .hfeed ~ .plugin_include_content {
-            > div > h2 {
+            > div > h2, > h2 {
                 width: @ini_content_width;
             }
         }
     }
     .makeFullWidth {
         .hfeed ~ .plugin_include_content {
-            > div > h2 {
+            > div > h2, > h2 {
                 width: ~"calc(100vw - 40px - 100px)";
             }
         }
@@ -61,7 +61,7 @@
 @media only screen and (max-width: 767px) {
     .makeFullWidth {
         .hfeed ~ .plugin_include_content {
-            > div > h2 {
+            > div > h2, > h2 {
                 width: 100vw;
             }
         }
