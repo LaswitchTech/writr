@@ -1,0 +1,25 @@
+/* =Table of Contents Styles
+----------------------------------------------- */
+
+#writr__main {
+    position: relative;
+
+    #dw__toc {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        width: 300px;
+        border: solid 2px @ini_background_alt;
+        z-index: 2000;
+
+        &:hover {
+            border: solid 2px @ini_theme_color;
+        }
+    }
+
+    &:has(#plugin_bloglinks__links) {
+        #dw__toc {
+            top: 116px;
+        }
+    }
+}
