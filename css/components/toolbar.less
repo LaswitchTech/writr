@@ -93,7 +93,8 @@
                             font-weight: normal;
                         }
                         a,a.urlextern {
-                            display: inline-block;
+                            display: inline-flex;
+                            align-items: center;
                             height: 100%;
                             font-size: 16px;
                             line-height: 16px;
@@ -103,6 +104,68 @@
 
                             img {
                                 margin: 0px;
+                            }
+
+                            &::before {
+                                font-family: "bootstrap-icons";
+                                display: inline-block;
+                                margin-right: 4px;
+                                font-size: 1.2em;
+                            }
+
+                            &[href^="mailto:"]::before {
+                                content: "\F32F";
+                                color: #007bff;
+                            }
+
+                            &[href^="tel:"]::before {
+                                content: "\F3CD";
+                                color: #25D366;
+                            }
+
+                            &[href*="youtube.com/"]::before {
+                                content: "\F62B";
+                                color: #b2071d;
+                            }
+
+                            &[href*="instagram.com/"]::before {
+                                content: "\F437";
+                                color: #E4405F;
+                            }
+
+                            &[href*="github.com/"]::before {
+                                content: "\F3ED";
+                                color: #ffffff;
+                            }
+
+                            &[href*="github.com/sponsors/"]::before {
+                                content: "\F417";
+                                color: #e60073;
+                            }
+
+                            &[href*="reddit.com/"]::before {
+                                content: "\F650";
+                                color: #FF4500;
+                            }
+
+                            &[href*="twitter.com/"]::before {
+                                content: "\F5EF";
+                                color: #1DA1F2;
+                            }
+
+                            &[href*="x.com/"]::before {
+                                content: "\F8DB";
+                                color: #1DA1F2;
+                            }
+
+                            &[href*="facebook.com/"]::before {
+                                content: "\F344";
+                                color: #1877F2;
+                            }
+
+                            &[href*="patreon.com/"]::before {
+                                content: "\F417";
+                                color: #F96854;
                             }
                         }
                         a:hover {
