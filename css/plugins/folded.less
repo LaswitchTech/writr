@@ -1,0 +1,56 @@
+/* =Folded Plugin
+----------------------------------------------- */
+
+.dokuwiki {
+    .file {
+        margin-bottom: 20px;
+
+        dt,dd {
+            margin-right: 0px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+
+    p:has(a.folder.open) {
+        margin-bottom: 0px;
+    }
+
+    div.folded {
+        padding: 0px;
+        margin-bottom: 20px;
+
+        .file {
+            margin-bottom: 0px;
+        }
+    }
+
+    a.folder {
+        padding: 16px;
+        padding-left: 32px;
+        font-weight: bold;
+        background-color: @ini_border;
+        width: 100%;
+        display: block;
+        background-image: none;
+        position: relative;
+
+        &::before {
+            font-family: 'bootstrap-icons';
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 24px;
+            content: "\F282";
+        }
+
+        &.open {
+            background-color: @ini_theme_color;
+            background-image: none;
+            color: @ini_background;
+
+            &::before {
+                content: "\F286";
+            }
+        }
+    }
+}
