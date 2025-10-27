@@ -108,27 +108,30 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <div class="page-tools">
             <h3 <?php if(!tpl_getConf('showPageToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['page_tools'] ?></h3>
             <ul>
-                <?php if (!$conf['useacl'] || ($conf['useacl'] && $INFO['perm'] >= 4)): ?>
-                    <?php
-                    $instructions = '{{NEWPAGE';
-                    if(tpl_getConf('defaultAddNewPage') !== ''){
-                        $instructions .= '>';
-                        $instructions .= tpl_getConf('defaultAddNewPage');
+                <?php
+                    $addnewpage = plugin_load('syntax','addnewpage');
+                    if ($addnewpage){
+                        if (!$conf['useacl'] || ($conf['useacl'] && $INFO['perm'] >= 4)) {
+                            $instructions = '{{NEWPAGE';
+                            if(tpl_getConf('defaultAddNewPage') !== ''){
+                                $instructions .= '>';
+                                $instructions .= tpl_getConf('defaultAddNewPage');
+                            }
+                            $instructions .= '}}';
+                            $instructions = p_get_instructions($instructions);
+                            if(count($instructions) > 0) {
+                                $render = p_render('xhtml',$instructions,$info);
+                                echo '<li>'
+                                    .'<a href="#" class="action AddNewPage" title="'.tpl_getLang('AddNewPage').'">'
+                                    .'<span class="icon"></span>'
+                                    .'<span class="a11y">'.tpl_getLang('AddNewPage').'</span>'
+                                    .'</a>'
+                                    .$render
+                                    .'</li>';
+                            }
+                        }
                     }
-                    $instructions .= '}}';
-                    $instructions = p_get_instructions($instructions);
-                    if(count($instructions) > 0) {
-                        $render = p_render('xhtml',$instructions,$info);
-                        echo '<li>'
-                            .'<a href="#" class="action AddNewPage" title="'.tpl_getLang('AddNewPage').'">'
-                            .'<span class="icon"></span>'
-                            .'<span class="a11y">'.tpl_getLang('AddNewPage').'</span>'
-                            .'</a>'
-                            .$render
-                            .'</li>';
-                    }
-                    ?>
-                <?php endif ?>
+                ?>
                 <?php
                     $starred = plugin_load('action','starred');
                     if ($starred) {
@@ -136,29 +139,33 @@ $showSidebar = page_findnearest($conf['sidebar']);
                         echo '<li>'.$render.'</li>';
                     }
                 ?>
-                <?php $translation = plugin_load('helper','translation');
-                if ($translation){
-                    $render = $translation->showTranslations(false);
-                    echo '<li>'
-                        .'<a href="#" class="action Translation" title="'.tpl_getLang('Language').'">'
-                        .'<span class="icon"></span>'
-                        .'<span class="a11y">'.tpl_getLang('Language').'</span>'
-                        .'</a>'
-                        .$render
-                        .'</li>';
-                } ?>
-                <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
-                foreach($items as $item) {
-                    $attributes = $item->getLinkAttributes();
-                    $html = '<li><a';
-                    foreach($attributes as $key => $value) {
-                        $html .= ' '.$key.'="'.$value.'"';
+                <?php
+                    $translation = plugin_load('helper','translation');
+                    if ($translation){
+                        $render = $translation->showTranslations(false);
+                        echo '<li>'
+                            .'<a href="#" class="action Translation" title="'.tpl_getLang('Language').'">'
+                            .'<span class="icon"></span>'
+                            .'<span class="a11y">'.tpl_getLang('Language').'</span>'
+                            .'</a>'
+                            .$render
+                            .'</li>';
                     }
-                    $html .= '><span class="icon"></span>'
-                        .'<span class="a11y">'.$item->getLabel().'</span>'
-                        .'</a></li>';
-                    echo $html;
-                } ?>
+                ?>
+                <?php
+                    $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+                    foreach($items as $item) {
+                        $attributes = $item->getLinkAttributes();
+                        $html = '<li><a';
+                        foreach($attributes as $key => $value) {
+                            $html .= ' '.$key.'="'.$value.'"';
+                        }
+                        $html .= '><span class="icon"></span>'
+                            .'<span class="a11y">'.$item->getLabel().'</span>'
+                            .'</a></li>';
+                        echo $html;
+                    }
+                ?>
             </ul>
         </div>
 
