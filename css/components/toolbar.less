@@ -93,7 +93,8 @@
                             font-weight: normal;
                         }
                         a,a.urlextern {
-                            display: inline-block;
+                            display: inline-flex;
+                            align-items: center;
                             height: 100%;
                             font-size: 16px;
                             line-height: 16px;
@@ -103,6 +104,28 @@
 
                             img {
                                 margin: 0px;
+                            }
+
+                            &::before {
+                                font-family: "bootstrap-icons";
+                                display: inline-block;
+                                margin-right: 4px;
+                                font-size: 1.2em;
+                            }
+
+                            &[href*="youtube.com/"]::before {
+                                content: "\F62B";
+                                color: #b2071d;
+                            }
+
+                            &[href*="instagram.com/"]::before {
+                                content: "\F437";
+                                color: #E4405F;
+                            }
+
+                            &[href*="github.com/"]::before {
+                                content: "\F3ED";
+                                color: #ffffff;
                             }
                         }
                         a:hover {
