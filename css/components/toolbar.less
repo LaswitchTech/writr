@@ -351,8 +351,20 @@
 /* 960px > x */
 @media only screen and (max-width: 959px) {
     .enableToolbar {
-        #writr__page {
-            margin-top: 64px;
+        &:has(#writr__toolbar .hook ul),
+        &:has(#writr__toolbar .hook ol),
+        &:has(#writr__toolbar .hook p),
+        &:has(#writr__toolbar .hook span),
+        &:has(#writr__toolbar .hook h1),
+        &:has(#writr__toolbar .hook h2),
+        &:has(#writr__toolbar .hook h3),
+        &:has(#writr__toolbar .hook h4),
+        &:has(#writr__toolbar .hook h5),
+        &:has(#writr__toolbar .hook h6),
+        &:has(#writr__toolbar .hook img) {
+            #writr__page {
+                margin-top: 64px;
+            }
         }
         #writr__toolbar {
             flex-direction: column;
