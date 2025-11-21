@@ -9,10 +9,12 @@
         top: 20px;
         right: 0px;
         width: 300px;
+        min-height: 40px;
         border: solid 2px @ini_background_alt;
-        z-index: 2000;
+        z-index: 900;
 
-        &:hover {
+        &:hover,
+        &:has(.toggle.open) {
             border: solid 2px @ini_theme_color;
         }
     }
@@ -20,6 +22,39 @@
     &:has(#plugin_bloglinks__links) {
         #dw__toc {
             top: 116px;
+        }
+    }
+}
+/* 960px > x */
+@media only screen and (max-width: 959px) {
+    #writr__main {
+        #dw__toc {
+            width: auto;
+            padding: 20px 40px;
+
+            &:has(.toggle.closed) {
+                padding: 0px;
+            }
+
+            > h3 {
+                font-size: 0px;
+                padding: 0px;
+
+                > * {
+                    font-size: 14px;
+                    padding: 8px 16px;
+                    margin: 0px;
+                }
+            }
+
+            &:has(.toggle.open) {
+                > h3 {
+                    > * {
+                        margin-top: -20px;
+                        margin-right: -40px;
+                    }
+                }
+            }
         }
     }
 }
