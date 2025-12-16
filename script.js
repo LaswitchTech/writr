@@ -306,4 +306,110 @@ jQuery(document).ready(function() {
             jQuery(this).addClass('multi-line');
         }
     });
+
+    /*
+     * Disqus iframe minimum height
+     *
+     * Disqus sets an inline height with !important (via JS). That height can be a bit
+     * too small for our visual caps/padding. We therefore enforce:
+     *   effectiveHeight >= (disqusHeight + EXTRA)
+     *
+     * Important: we must NOT keep adding EXTRA on our own updates.
+     */
+    (function disqusMinHeightFix(){
+        const $thread = jQuery('#disqus__thread');
+        if (!$thread.length) return;
+
+        const EXTRA = 72; // additional space needed for our visual caps/spacing
+
+        function parseInlinePx(value) {
+            if (!value) return null;
+            const n = parseInt(String(value).replace('px', ''), 10);
+            return Number.isFinite(n) ? n : null;
+        }
+
+        function getInlineHeightPx(iframe) {
+            // Prefer inline style.height because Disqus writes it.
+            const h = parseInlinePx(iframe.style && iframe.style.height);
+            if (h !== null) return h;
+
+            // Fallback: jQuery height
+            const $if = jQuery(iframe);
+            const jh = parseInlinePx($if.css('height'));
+            return jh !== null ? jh : null;
+        }
+
+        function applyFloor(iframe) {
+            if (!iframe) return;
+
+            const current = getInlineHeightPx(iframe);
+            if (current === null) return;
+
+            // If this height is exactly what we last applied, ignore (prevents +64 runaway).
+            const lastApplied = parseInlinePx(iframe.getAttribute('data-writr-last-applied'));
+            if (lastApplied !== null && current === lastApplied) return;
+
+            // Treat the current inline height as Disqus' desired height.
+            const disqusHeight = current;
+            const target = disqusHeight + EXTRA;
+
+            // Only increase if needed.
+            if (current < target) {
+                iframe.style.setProperty('height', target + 'px', 'important');
+                iframe.setAttribute('data-writr-last-applied', String(target));
+            }
+
+            // Keep a record of the last disqus height we saw.
+            iframe.setAttribute('data-writr-last-disqus', String(disqusHeight));
+        }
+
+        function attachToIframe(iframe) {
+            if (!iframe) return;
+
+            // Avoid attaching twice.
+            if (iframe.getAttribute('data-writr-disqus-observer') === '1') {
+                applyFloor(iframe);
+                return;
+            }
+            iframe.setAttribute('data-writr-disqus-observer', '1');
+
+            // Initial apply.
+            applyFloor(iframe);
+
+            // Observe style changes (Disqus updates height via inline styles).
+            const obs = new MutationObserver(function(mutations){
+                for (const m of mutations) {
+                    if (m.type === 'attributes' && m.attributeName === 'style') {
+                        applyFloor(iframe);
+                    }
+                }
+            });
+            obs.observe(iframe, { attributes: true, attributeFilter: ['style'] });
+
+            // Store observer so we can disconnect if needed.
+            iframe._writrDisqusObs = obs;
+        }
+
+        function findPrimaryIframe() {
+            // Disqus uses an iframe id like dsq-app####.
+            const iframe = $thread.find('iframe[id^="dsq-app"]').get(0);
+            return iframe || null;
+        }
+
+        // Attach to current iframe.
+        attachToIframe(findPrimaryIframe());
+
+        // In some cases Disqus replaces the iframe node. Watch the container for changes.
+        const containerObs = new MutationObserver(function(){
+            const iframe = findPrimaryIframe();
+            if (iframe) attachToIframe(iframe);
+        });
+        containerObs.observe($thread.get(0), { childList: true, subtree: true });
+
+        // As a last resort, re-apply on window resize (layout can change Disqus height).
+        jQuery(window).on('resize', function(){
+            const iframe = findPrimaryIframe();
+            if (iframe) applyFloor(iframe);
+        });
+    })();
 });
