@@ -1,0 +1,76 @@
+/* =Disqus Plugin
+----------------------------------------------- */
+
+.dokuwiki {
+    &.makeFullWidth {
+        #disqus__thread {
+            &::after,
+            &::before {
+                width: ~"calc(100vw - 400px - @{ini_content_border})";
+            }
+        }
+    }
+
+    #disqus__thread {
+        position: relative;
+        margin: 0px -40px;
+        padding: 16px 0px;
+        background-color: @ini_background;
+
+        &::before,
+        &::after {
+            position: absolute;
+            left: 0;
+            height: 16px;
+            line-height: 16px;
+            width: @ini_content_width;
+            background-color: @ini_background;
+            color: @ini_background;
+            pointer-events: none;
+            content: "";
+        }
+
+        &::before {
+            top: 16px;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        &::after {
+            bottom: 16px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        iframe[id^="dsq-app"]{
+            display: block;
+            background-color: @ini_text_alt;
+            padding: 40px;
+            box-sizing: border-box;
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    .dokuwiki {
+        #disqus__thread {
+            &::after,
+            &::before {
+                width: ~"calc(100vw - 100px - 40px)";
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .dokuwiki {
+        #disqus__thread {
+            &::after,
+            &::before {
+                width: 100vw;
+            }
+        }
+    }
+}
+
