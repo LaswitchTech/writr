@@ -28,3 +28,8 @@ $meta['defaultAddNewPage']              = array('string');
 $meta['enableStarredBookmark']          = array('onoff');
 
 $meta['_customizations']                = array('fieldset');
+$meta['profile_pic_variant'] = ['multichoice',
+    '_choices' => [
+        'black',
+        'white']
+];

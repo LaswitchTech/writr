@@ -25,3 +25,6 @@ $lang['_plugins']                           = 'Configure les Extensions';
 $lang['defaultAddNewPage']                  = 'Namespace pour l\'extension AddNewPage';
 
 $lang['_customizations']                    = 'Personalise le Template';
+$lang['profile_pic_variant']                = 'Couleur du contour de l\'avatar (sans Gravatar)';
+$lang['profile_pic_variant_o_black']        = 'Noir';
+$lang['profile_pic_variant_o_white']        = 'Blanc';
