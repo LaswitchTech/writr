@@ -87,10 +87,30 @@ if (!function_exists('tpl_getSiteBranding')) {
 if (!function_exists('tpl_getGravatarURL')) {
     function tpl_getGravatarURL($email, $size = 96)
     {
-        return 'https://www.gravatar.com/avatar/'.md5(strtolower(trim($email))).'?s='.$size;
+        global $conf;
+        $email = trim(strtolower((string)$email));
+        $tplName = basename(__DIR__);
+        $variant = function_exists('tpl_getConf') ? tpl_getConf('profile_pic_variant') : 'white';
+
+        if ($variant === 'black') {
+            $fallback = DOKU_BASE.'lib/tpl/'.$tplName.'/images/profile_pic_black.png';
+        } else {
+            $fallback = DOKU_BASE.'lib/tpl/'.$tplName.'/images/profile_pic_white.png';
+        }
+
+        if (empty($email)) {
+            return $fallback;
+        }
+
+        $hash = md5(strtolower(trim($email)));
+        $testUrl = 'https://www.gravatar.com/avatar/'.$hash.'?s='.$size.'&d=404';
+        $headers = @get_headers($testUrl);
+        if ($headers && isset($headers[0]) && strpos($headers[0], '200') !== false) {
+            return 'https://www.gravatar.com/avatar/'.$hash.'?s='.$size;
+        }
+        return $fallback;
     }
 }
-
 
 /**
  * Generate the HTML for a menu
