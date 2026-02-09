@@ -28,3 +28,4 @@ $conf['defaultAddNewPage']              = '';
 $conf['enableStarredBookmark']          = 0;
 
 $conf['_customizations']                = '';
+$conf['profile_pic_variant']            = 'white';

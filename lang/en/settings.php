@@ -26,3 +26,4 @@ $lang['defaultAddNewPage']                  = 'Namespace for AddNewPage plugin';
 $lang['enableStarredBookmark']              = 'Enable the Starred Bookmarks in the Toolbar';
 
 $lang['_customizations']                    = 'Customize the Template';
+$lang['profile_pic_variant']                = 'Colour of outline for profile picture (if no gravatar)';
