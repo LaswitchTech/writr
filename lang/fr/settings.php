@@ -23,6 +23,7 @@ $lang['doTaglineChangesByNamespace']        = 'Les changements de tagline du sit
 
 $lang['_plugins']                           = 'Configure les Extensions';
 $lang['defaultAddNewPage']                  = 'Namespace pour l\'extension AddNewPage';
+$lang['enableStarredBookmark']              = 'Activer les favoris étoilés dans la barre d\'outils';
 
 $lang['_customizations']                    = 'Personalise le Template';
 $lang['profile_pic_variant']                = 'Couleur du contour de l\'avatar (sans Gravatar)';
