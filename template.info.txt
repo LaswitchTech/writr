@@ -1,7 +1,7 @@
 base     writr
 author   Louis Ouellet
 email    louis_ouellet@hotmail.com
-date     2026-01-07
+date     2026-02-12
 name     Writr Template
 desc     Bold, minimalist and modern
 url      https://www.dokuwiki.org/template:writr
