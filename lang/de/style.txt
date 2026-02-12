@@ -1,0 +1,6 @@
+Wenn du das Logo ändern möchtest, lade über den Medienmanager eine „logo.png“ in den Root-Namespace hoch, und das Logo wird automatisch verwendet.
+Dort kannst du auch das „favicon.ico“ hochladen.
+
+Wenn du ein geschlossenes Wiki verwendest, wird empfohlen, den Root-Namespace in den ACL-Einstellungen für alle lesbar zu machen, da sonst das Favicon für nicht eingeloggte Benutzer nicht angezeigt wird.
+
+Um eine Navigation zur Sidebar hinzuzufügen, kannst du eine Seite mit dem Namen „topnav“ anlegen und dort eine Liste von Links einfügen (Andere Inhalte werden nicht unterstützt).

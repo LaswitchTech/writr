@@ -16,5 +16,4 @@ $lang['__content_border__']                 = 'Width of the right border of the 
 $lang['AddNewPage']                         = 'Add new page';
 $lang['Language']                           = 'Language';
 $lang['__font__']                           = 'Font';
-
 $lang['Bookmarks']                          = 'Bookmarks';

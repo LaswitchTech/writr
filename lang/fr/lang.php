@@ -16,3 +16,4 @@ $lang['__content_border__']                 = 'Largeur de la bordure droite de l
 $lang['AddNewPage']                         = 'Ajouter une nouvelle page';
 $lang['Language']                           = 'Langue';
 $lang['__font__']                           = 'Police';
+$lang['Bookmarks']                          = 'Les favoris';
