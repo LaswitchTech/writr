@@ -1,6 +1,5 @@
 name: Bug report
 description: Create a report to report a bug
-title: ""
 labels: ["Bug"]
 assignees:
   - LouisOuellet
@@ -48,6 +47,14 @@ body:
     validations:
       required: true
   - type: input
+    id: template_version
+    attributes:
+      label: Version of Template
+      description: Can be found in the admin screen, in the extension manager.
+      placeholder: '2026-02-12'
+    validations:
+      required: true
+  - type: input
     id: php_version
     attributes:
       label: PHP Version
@@ -61,21 +68,15 @@ body:
       label: Webserver and version of webserver
       description: If applicable, always include if unsure
       placeholder: "Apache 2.4 on Debian Linux"
-    validations:
-      required: false
   - type: input
     id: browser
     attributes:
       label: Browser and version of browser, operating system running browser
       description: If applicable, always include if unsure
       placeholder: "Chrome 221 on Windows 11"
-    validations:
-      required: false
   - type: textarea
     id: logs
     attributes:
       label: Screenshots or Logs
       description: Paste logs or attach screenshots.
       placeholder: "Paste your logs or attach the screenshot"
-    validations:
-      required: false
