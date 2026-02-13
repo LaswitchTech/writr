@@ -1,10 +1,9 @@
----
 name: Bug report
 description: Create a report to report a bug
 title: ""
 labels: ["Bug"]
-assignees: "LouisOuellet"
----
+assignees:
+  - LouisOuellet
 
 body:
   - type: textarea
@@ -15,7 +14,6 @@ body:
       placeholder: "Description of the bug or feature"
     validations:
       required: true
-
   - type: textarea
     id: steps
     attributes:
@@ -27,7 +25,6 @@ body:
         3. And so on...
     validations:
       required: true
-
   - type: textarea
     id: expected
     attributes:
@@ -35,7 +32,6 @@ body:
       placeholder: "What you expected to happen"
     validations:
       required: true
-
   - type: textarea
     id: actual
     attributes:
@@ -43,7 +39,6 @@ body:
       placeholder: "What actually happened"
     validations:
       required: true
-
   - type: input
     id: dokuwiki_version
     attributes:
@@ -52,7 +47,6 @@ body:
       placeholder: '2024-02-14a "Kaos"'
     validations:
       required: true
-
   - type: input
     id: php_version
     attributes:
@@ -61,7 +55,6 @@ body:
       placeholder: "8.3"
     validations:
       required: true
-
   - type: input
     id: webserver
     attributes:
@@ -70,7 +63,6 @@ body:
       placeholder: "Apache 2.4 on Debian Linux"
     validations:
       required: false
-
   - type: input
     id: browser
     attributes:
@@ -79,7 +71,6 @@ body:
       placeholder: "Chrome 221 on Windows 11"
     validations:
       required: false
-
   - type: textarea
     id: logs
     attributes:
