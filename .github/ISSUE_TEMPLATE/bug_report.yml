@@ -1,7 +1,7 @@
 name: Bug report
-description: Create a report to help us improve
+description: Create a report to report a bug
 title: ""
-labels: ["bug"]
+labels: ["Bug"]
 assignees:
   - LouisOuellet
 
@@ -44,20 +44,32 @@ body:
       required: true
 
   - type: input
-    id: python_version
     attributes:
-      label: Python version
-      placeholder: "e.g. 3.11.2"
+      label: Version of DokuWiki
+      description: Can be found in the admin screen or in the `VERSION` file.
+      placeholder: 2024-02-14a "Kaos"
     validations:
-      required: false
+      required: true
 
   - type: input
-    id: os_version
     attributes:
-      label: Operating system version
-      placeholder: "e.g. Windows 10 / macOS 13.4 / Ubuntu 22.04"
+      label: PHP Version
+      description: The version of PHP you are using to run DokuWiki
+      placeholder: "8.3"
     validations:
-      required: false
+      required: true
+
+  - type: input
+    attributes:
+      label: Webserver and version of webserver
+      description: If applicable, always include if unsure
+      placeholder: Apache 2.4 on Debian Linux
+
+  - type: input
+    attributes:
+      label: Browser and version of browser, operating system running browser
+      description: If applicable, always include if unsure
+      placeholder: "Chrome 221 on Windows 11"
 
   - type: textarea
     id: logs
