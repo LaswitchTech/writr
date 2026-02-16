@@ -116,7 +116,10 @@ body:before {
 }
 
 #writr__main {
-    > h1:first-of-type {
+    > h1:first-of-type,
+    > #dw__toc + h1,
+    > .section_highlight_wrapper:first-child > h1:first-of-type,
+    > #dw__toc + .section_highlight_wrapper > h1:first-of-type {
         text-transform: uppercase;
         width: @ini_content_width;
         background: @ini_border;
@@ -129,7 +132,10 @@ body:before {
 .makeFullWidth #writr__main {
     width: ~"calc(100vw - 400px - 80px - @{ini_content_border})";
 
-    > h1:first-of-type {
+    > h1:first-of-type,
+    > #dw__toc + h1,
+    > .section_highlight_wrapper:first-child > h1:first-of-type,
+    > #dw__toc + .section_highlight_wrapper > h1:first-of-type {
         width: ~"calc(100vw - 400px - @{ini_content_border})";
     }
 }
