@@ -1,0 +1,335 @@
+/* =PDF Stylesheet for Writr
+----------------------------------------------- */
+
+
+// Montserrat Font
+@import 'css/montserrat.less';
+
+// GenericIcons Font
+@import 'css/genericons.less';
+
+// Bootstrap Icons Font
+@import 'css/bootstrap-icons.less';
+
+// DW2PDF plugin
+page,
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #fff;
+    color: #656565;
+    font-family: Montserrat, sans-serif;
+}
+body:after,
+body:before,
+page:before,
+#writr__sidebar-toggle,
+#writr__sidebar-toggle:before,
+#writr__sidebar-toggle:after,
+.search-form,
+.main-navigation,
+.widget-area,
+.dokuwiki .breadcrumbs,
+#dw__toc,
+.page-footer {
+    display: none;
+}
+
+.site-logo {
+    float: left;
+    margin-right: 20px;
+}
+.site-title {
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: @ini_theme_color;
+    }
+}
+
+div.footnotes {
+    clear: both;
+    border-top: 1pt solid #000;
+    margin-top: 10pt;
+}
+
+pre {
+    font-family: monospace;
+}
+dl.code dt,
+dl.file dt {
+    font-weight: bold;
+}
+
+img {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+// Links
+a {
+    color: @ini_theme_color;
+}
+a:hover,
+a:focus,
+a:active {
+    color: @ini_theme_color_alt;
+}
+
+// Headings
+h1,h2,h3,h4,h5,h6 {
+    clear: left;
+    margin: 0 0 20px;
+    color: #303030 !important;
+}
+h1,h2,h3 {
+    text-transform: uppercase !important;
+    background-color: @ini_border !important;
+    width: 100% !important;
+    font-weight: bold !important;
+
+    /* Force browser to print background colors */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+h1 {
+    padding: 20px !important;
+}
+h2 {
+    padding: 16px !important;
+}
+h3 {
+    padding: 12px !important;
+}
+
+// Preformatted text
+pre {
+    overflow: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    background: @ini_background_alt;
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+    text-align: left;
+}
+
+// Code elements
+code,
+kbd,
+tt,
+var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    color: #c7254e;
+}
+
+// Tables
+table,
+table th,
+table td,
+table[border],
+table[border] th,
+table[border] td {
+    border: none !important;
+}
+
+table,
+table[border] {
+    margin: 0 0 20px !important;
+    width: 100% !important;
+
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+
+    background-color: @ini_background_alt !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+
+    page-break-inside: auto;
+
+    tr,
+    tr[border] {
+        page-break-inside: avoid !important;
+        &:last-of-type td {
+            border-bottom: 1px solid @ini_background_alt !important;
+        }
+    }
+
+    th,
+    th[border] {
+        border-top: 1px solid @ini_background_neu !important;
+        border-bottom: 1px solid @ini_background_neu !important;
+        border-left: 1px solid @ini_background_neu !important;
+        border-right: 1px solid @ini_background_neu !important;
+
+        background-color: @ini_background_neu !important;
+        font-weight: bold !important;
+        color: #303030 !important;
+    }
+
+    td,
+    td[border] {
+        border-top: 1px solid @ini_background_alt !important;
+        border-bottom: 1px solid @ini_background_neu !important;
+        border-left: 1px solid @ini_background_alt !important;
+        border-right: 1px solid @ini_background_alt !important;
+        &:last-of-type {
+            border-right: 1px solid @ini_background_alt !important;
+        }
+    }
+
+    th,
+    td {
+        padding: 10px !important;
+    }
+}
+
+// Icons plugin
+@import 'plugins/icons.less';
+
+// Keyboard plugin
+@import 'plugins/keyboard.less';
+
+// Wrap plugin
+@import 'plugins/wrap.less';
+// .wrap_info,
+// div.wrap_info,
+// span.wrap_info,
+// .wrap_tip,
+// div.wrap_tip,
+// span.wrap_tip,
+// .wrap_important,
+// div.wrap_important,
+// span.wrap_important,
+// .wrap_alert,
+// div.wrap_alert,
+// span.wrap_alert,
+// .wrap_help,
+// div.wrap_help,
+// span.wrap_help,
+// .wrap_download,
+// div.wrap_download,
+// span.wrap_download,
+// .wrap_todo,
+// div.wrap_todo,
+// span.wrap_todo {
+//     background: none !important;
+//     background-image: none !important;
+
+//     &::before {
+//         font-family: 'bootstrap-icons';
+//     }
+// }
+// div.wrap_info,
+// div.wrap_tip,
+// div.wrap_important,
+// div.wrap_alert,
+// div.wrap_help,
+// div.wrap_download,
+// div.wrap_todo{
+//     padding: 1em 1em .5em 70px;
+//     margin-bottom: 1.5em;
+//     min-height: 68px;
+//     background-position: 10px 50%;
+//     background-repeat: no-repeat;
+//     color: inherit;
+//     overflow: hidden;
+//     &::before {
+//         font-size: 48px !important;
+//         position: absolute !important;
+
+//         margin-left: -56px !important;
+//         margin-top: -16px !important;
+//     }
+// }
+// span.wrap_info,
+// span.wrap_tip,
+// span.wrap_important,
+// span.wrap_alert,
+// span.wrap_help,
+// span.wrap_download,
+// span.wrap_todo{
+//     padding: 0 2px 0 20px;
+//     min-height: 20px;
+//     background-position: 2px 50%;
+//     background-repeat: no-repeat;
+//     color: inherit;
+//     &::before {
+//         font-size: 16px !important;
+//         position: relative !important;
+
+//         margin-left: 16px !important;
+//     }
+// }
+
+// .wrap_info,
+// div.wrap_info,
+// span.wrap_info {
+//     border-color: #0dcaf0 !important;
+//     background-color: #c9f2fb !important;
+//     &::before {
+//         color: #0dcaf0 !important;
+//     }
+// }
+
+// .wrap_tip,
+// div.wrap_tip,
+// span.wrap_tip {
+//     border-color: #ffc107 !important;
+//     background-color: #fff3cd !important;
+//     &::before {
+//         color: #ffc107 !important;
+//     }
+// }
+
+// .wrap_important,
+// div.wrap_important,
+// span.wrap_important {
+//     border-color: #fd7e14 !important;
+//     background-color: #ffe5d0 !important;
+//     &::before {
+//         color: #fd7e14 !important;
+//     }
+// }
+
+// .wrap_alert,
+// div.wrap_alert,
+// span.wrap_alert {
+//     border-color: #dc3545 !important;
+//     background-color: #f8d7da !important;
+//     &::before {
+//         color: #dc3545 !important;
+//     }
+// }
+
+// .wrap_help,
+// div.wrap_help,
+// span.wrap_help {
+//     border-color: #6f42c1 !important;
+//     background-color: #e2d9f3 !important;
+//     &::before {
+//         color: #6f42c1 !important;
+//     }
+// }
+
+// .wrap_download,
+// div.wrap_download,
+// span.wrap_download {
+//     border-color: #198754 !important;
+//     background-color: #d1e7dd !important;
+//     &::before {
+//         color: #198754 !important;
+//     }
+// }
+
+// .wrap_todo,
+// div.wrap_todo,
+// span.wrap_todo {
+//     border-color: #20c997 !important;
+//     background-color: #d1e7dd !important;
+//     &::before {
+//         color: #20c997 !important;
+//     }
+// }
