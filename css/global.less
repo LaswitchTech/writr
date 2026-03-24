@@ -240,6 +240,10 @@ input {
 select {
     width: 100%;
     color: @ini_text_alt;
+
+    &[multiple="multiple"] {
+        height: auto !important;
+    }
 }
 button,
 input[type="button"],
