@@ -196,18 +196,18 @@ img {
 }
 
 .site-main {
-    img {
+    img:not(.icon):not(button img,.wrap_article-image img, .wrap_project-image img) {
         border-radius: 20px;
         border: 6px solid @ini_text_alt;
     }
 
     a:has(img) {
-        img {
+        img:not(.icon):not(button img,.wrap_article-image img, .wrap_project-image img)  {
             transition: all 0.5s ease;
         }
 
         &:hover {
-            img {
+            img:not(.icon):not(button img,.wrap_article-image img, .wrap_project-image img) {
                 border-color: @ini_theme_color;
             }
         }
