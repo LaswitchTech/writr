@@ -195,6 +195,25 @@ img {
     max-width: 100%; /* Adhere to container width. */
 }
 
+.site-main {
+    img {
+        border-radius: 20px;
+        border: 6px solid @ini_text_alt;
+    }
+
+    a:has(img) {
+        img {
+            transition: all 0.5s ease;
+        }
+
+        &:hover {
+            img {
+                border-color: @ini_theme_color;
+            }
+        }
+    }
+}
+
 /* Video */
 embed,
 iframe,
