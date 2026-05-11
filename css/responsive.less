@@ -227,6 +227,17 @@
         width: ~"calc(100vw - 40px - 100px)";
     }
 
+    .makeFullWidth #writr__main {
+        width: ~"calc(100vw - 80px)" !important;
+
+        > h1:first-of-type,
+        > #dw__toc + h1,
+        > .section_highlight_wrapper:first-child > h1:first-of-type,
+        > #dw__toc + .section_highlight_wrapper > h1:first-of-type {
+            width: ~"calc(100vw)" !important;
+        }
+    }
+
     #writr__main,
     .makeFullWidth #writr__main {
         > h1:first-of-type {

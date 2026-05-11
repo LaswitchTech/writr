@@ -2,15 +2,34 @@
 ----------------------------------------------- */
 
 kbd.__keyboard {
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 5px 10px !important;
+    display: inline;
+    border-radius: 5px !important;
     border: 1px solid @ini_border !important;
+    border-bottom: 2px solid @ini_border !important;
     font-size: 0.85em;
+    padding: 5px 10px !important;
     background-color: @ini_background_alt !important;
-    border-radius: 3px;
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+
+    &:hover {
+        background-color: @ini_border !important;
+    }
+}
+
+@media print {
+    kbd.__keyboard {
+        border-top: 5px solid @ini_background_alt !important;
+        border-bottom: 5px solid @ini_background_alt !important;
+        border-left: 10px solid @ini_background_alt !important;
+        border-right: 10px solid @ini_background_alt !important;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+    }
 }
