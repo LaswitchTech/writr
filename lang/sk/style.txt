@@ -1,0 +1,7 @@
+Ak chcete zmeniť logo, jednoducho cez Správcu médií nahrajte ''logo.png'' do koreňového menného priestoru a automaticky sa použije.
+
+Môžete tam nahrať aj ''favicon.ico''.
+
+Ak používate uzavretú wiki, odporúča sa nastaviť koreňový menný priestor v ACL nastaveniach ako verejne čitateľný, inak sa favicon odhláseným používateľom nezobrazí.
+
+Na pridanie navigácie do bočného panela môžete vytvoriť stránku ''topnav'' a pridať do nej zoznam odkazov. (Iný obsah nie je podporovaný.)
